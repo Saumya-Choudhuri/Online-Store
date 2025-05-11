@@ -1,49 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="main">
+    <div id="nav">
+        <svg width="120" height="80" viewBox="0 0 120 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <!-- F (with crossbar) -->
+            <path d="M10 10H5V5H25V10H15V15H23V20H15V35H10V20H5V15H10V10Z" />
+            <!-- H (with crossbar) -->
+            <path d="M40 5H35V25H40V5Z" />
+            <path d="M60 5H55V25H60V5Z" />
+            <path d="M40 15H60V20H40V15Z" />
+        </svg>
+    </div>
+    <div id="nav-part2">
+        <div id="linkes">
+            <a href="#">About</a>
+            <a href="#">Shopping</a>
+            <a href="#">Cart</a>
+        </div>
+        <div id="icons"></div>
+    </div>
+    <div id="main" data-scroll-container>
         <div id="page1">
             <h1>change</h1>
             <h1>your body</h1>
             <div id="video-container">
                 <div id="play">PLAY</div>
-            
                 <video autoplay loop muted src="./intro.mp4"></video>
             </div>
         </div>
         <div id="page2">
-
             <div id="elem1" class="elem">
-                <img data-scroll data-scroll-speed="1" src="her2.png" alt="">
-                <div id="dets1" class="dets"></div>
+                <img data-scroll data-scroll-speed="1" src="her2.png" alt="Woman portrait" />
+                <div data-scroll data-scroll-speed="-1" class="dets"></div>
             </div>
             <div id="elem2" class="elem">
-                <img data-scroll data-scroll-speed="1" src="acc.jpg" alt="">
-                <div id="dets2" class="dets"></div>
+                <img data-scroll data-scroll-speed="1" src="acc.jpg" alt="Accessories" />
+                <div data-scroll data-scroll-speed="-1" class="dets"></div>
             </div>
             <div id="elem3" class="elem">
-                <img data-scroll data-scroll-speed="1" src="him.jpg" alt="">
-                <div id="dets3" class="dets"></div>
+                <img data-scroll data-scroll-speed="1" src="him.jpg" alt="Man portrait" />
+                <div data-scroll data-scroll-speed="-1" class="dets"></div>
             </div>
-
         </div>
-        <div id="page3">
-
+        <div id="page3" class="list3" >
+            <!--".child#child$*4" is used to write the div child section 4 times-->
+            <div class="child" id="child1">
+                <video autoplay loop muted src="./page3img1.mp4"></video>
+            </div>
+            <div class="child" id="child2">
+                <video autoplay loop muted src="./girlcombo.mp4"></video>
+            </div>
+            <div class="child" id="child3">
+                <video autoplay loop muted src="./combo.mp4"></video>
+            </div>
+            <div class="child" id="child4">
+                <video autoplay loop muted src="./page3img4.mp4"></video>
+            </div>
         </div>
-
+        <div id="page4" class="list4">
+            <div class="child3child1"></div>
+            <div class="child3child2"></div>
+            <div class="child3child3"></div>
+            <div class="child3child4"></div>
+            <div class="child3child5"></div>
+            <div class="child3child6"></div>
+            <div class="child3child7"></div>
+            <div class="child3child8"></div>
+            <div class="child3child9"></div>
+            <div class="child3child10"></div>
+            <div class="child3child11"></div>
+    
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="script.js"></script>
-    
 </body>
 </html>
