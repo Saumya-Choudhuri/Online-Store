@@ -3,30 +3,147 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FH - Fashion House</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div id="nav">
-        <svg width="120" height="80" viewBox="0 0 120 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <!-- F (with crossbar) -->
-            <path d="M10 10H5V5H25V10H15V15H23V20H15V35H10V20H5V15H10V10Z" />
-            <!-- H (with crossbar) -->
-            <path d="M40 5H35V25H40V5Z" />
-            <path d="M60 5H55V25H60V5Z" />
-            <path d="M40 15H60V20H40V15Z" />
-        </svg>
+        <a href="#" class="logo-link" onclick="closePanels()">
+            <svg id="logo" width="120" height="80" viewBox="0 0 120 80" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                <!-- F (with crossbar) -->
+                <path d="M10 10H5V5H25V10H15V15H23V20H15V35H10V20H5V15H10V10Z" />
+                <!-- H (with crossbar) -->
+                <path d="M40 5H35V25H40V5Z" />
+                <path d="M60 5H55V25H60V5Z" />
+                <path d="M40 15H60V20H40V15Z" />
+            </svg>
+        </a>
     </div>
     <div id="nav-part2">
         <div id="linkes">
-            <a href="#">About</a>
-            <a href="#">Shopping</a>
-            <a href="#">Cart</a>
+            <a href="#" onclick="toggleAbout()">About</a>
+            <a href="#" onclick="toggleShopping()">Shopping</a>
+            <a href="#" onclick="toggleCart()">Cart <span id="cart-count">0</span></a>
         </div>
         <div id="icons"></div>
     </div>
+
+    <!-- About Panel -->
+    <div id="about-panel" class="side-panel">
+        <button class="close-btn" onclick="toggleAbout()"><i class="fas fa-times"></i></button>
+        <div class="panel-content">
+            <h2>Our Story</h2>
+            <p class="tagline">Redefining Fashion Since 2018</p>
+            
+            <div class="about-section">
+                <h3>Who We Are</h3>
+                <p>Fashion House (FH) is a premium fashion destination that blends contemporary style with timeless elegance. We believe that fashion is more than clothing—it's a form of self-expression that empowers individuals to showcase their unique identity.</p>
+            </div>
+            
+            <div class="about-section">
+                <h3>Our Mission</h3>
+                <p>To make high-quality, sustainable fashion accessible to everyone. We partner with ethical manufacturers and use eco-friendly materials to minimize our environmental footprint while maximizing style.</p>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Collections</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> support@fashionhouse.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Ave, New York, NY 10001</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Panel -->
+    <div id="shopping-panel" class="side-panel">
+        <button class="close-btn" onclick="toggleShopping()"><i class="fas fa-times"></i></button>
+        <div class="panel-content">
+            <h2>Shop Collection</h2>
+            
+            <div class="shop-filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+                <button class="filter-btn" onclick="filterProducts('women')">Women</button>
+                <button class="filter-btn" onclick="filterProducts('men')">Men</button>
+                <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Panel -->
+    <div id="cart-panel" class="side-panel">
+        <button class="close-btn" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        <div class="panel-content">
+            <h2>Your Cart</h2>
+            
+            <div id="cart-items">
+                <!-- Cart items will be loaded dynamically -->
+            </div>
+            
+            <div id="cart-empty" class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <button class="shop-now-btn" onclick="toggleShopping(); toggleCart();">Start Shopping</button>
+            </div>
+            
+            <div id="cart-summary" class="cart-summary" style="display: none;">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="cart-shipping">FREE</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button class="checkout-btn">
+                    <i class="fas fa-lock"></i> Secure Checkout
+                </button>
+                <p class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" onclick="closePanels()"></div>
     <div id="main" data-scroll-container>
         <div id="page1">
             <h1>change</h1>
@@ -39,15 +156,15 @@
         <div id="page2">
             <div id="elem1" class="elem">
                 <img data-scroll data-scroll-speed="1" src="her2.png" alt="Woman portrait" />
-                <div data-scroll data-scroll-speed="-1" class="dets"></div>
+                <div data-scroll data-scroll-speed="-1" class="dets">For Her</div>
             </div>
             <div id="elem2" class="elem">
                 <img data-scroll data-scroll-speed="1" src="acc.jpg" alt="Accessories" />
-                <div data-scroll data-scroll-speed="-1" class="dets"></div>
+                <div data-scroll data-scroll-speed="-1" class="dets">Accessories</div>
             </div>
             <div id="elem3" class="elem">
                 <img data-scroll data-scroll-speed="1" src="him.jpg" alt="Man portrait" />
-                <div data-scroll data-scroll-speed="-1" class="dets"></div>
+                <div data-scroll data-scroll-speed="-1" class="dets">For Him</div>
             </div>
         </div>
         <div id="page3" class="list3" >
