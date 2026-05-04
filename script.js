@@ -326,3 +326,4 @@ if (page2) {
         elems.forEach(el => el.classList.remove('active'));
     });
 }
+//new change 
