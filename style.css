@@ -678,10 +678,18 @@ body{
     position: relative;
     background-color: #F7F7F7;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;    /* Vertical centering */
     justify-content: space-evenly;
-    /*flex-wrap: wrap;*/
+}
 
+#page3 h2 {
+    font-size: 48px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+    order: -1;
 }
 .child{
     height: 80vh;
