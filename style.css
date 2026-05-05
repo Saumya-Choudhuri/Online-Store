@@ -679,8 +679,9 @@ body{
     background-color: #F7F7F7;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;    /* Vertical centering */
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
 }
 
 #page3 h2 {
@@ -689,8 +690,10 @@ body{
     width: 100%;
     text-align: center;
     padding: 40px 20px;
+    margin: 0;
     order: -1;
 }
+
 .child{
     height: 80vh;
     position: relative;
