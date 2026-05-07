@@ -855,3 +855,265 @@ body{
         font-size: 12px;
     }
 }
+
+/* About Page (Page 5) Styles */
+#page5 {
+    background-color: #F7F7F7;
+    width: 100%;
+    padding: 0;
+}
+
+.about-page {
+    width: 100%;
+}
+
+.about-hero {
+    height: 60vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.content-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 3px solid #000;
+    padding-bottom: 20px;
+}
+
+.section-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.stat-box {
+    padding: 30px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.stat-box .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-box .stat-label {
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Discount Banner Styles */
+.discount-banner {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    padding: 60px 40px;
+    margin: 80px auto;
+    border-radius: 15px;
+    max-width: 1000px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.discount-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.discount-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -10%;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.discount-content {
+    position: relative;
+    z-index: 1;
+}
+
+.discount-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.discount-percentage {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 15px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.discount-text {
+    font-size: 1.4rem;
+    margin: 15px 0 30px;
+    font-weight: 600;
+}
+
+.discount-description {
+    font-size: 1rem;
+    opacity: 0.95;
+    margin-bottom: 30px;
+}
+
+.discount-button {
+    display: inline-block;
+    background: white;
+    color: #ff6b6b;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.discount-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section Styles */
+.contact-section {
+    background: #f5f5f5;
+    padding: 60px 40px;
+    border-radius: 10px;
+    margin: 80px auto !important;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #000;
+    min-width: 30px;
+}
+
+.contact-text p {
+    margin-bottom: 5px;
+}
+
+.contact-text p:first-child {
+    font-weight: 600;
+}
+
+.contact-text a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-text a:hover {
+    color: #ff6b6b;
+}
+
+/* Responsive About Page */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .discount-banner {
+        padding: 40px 20px;
+        margin: 40px auto;
+    }
+
+    .discount-percentage {
+        font-size: 3rem;
+    }
+
+    .discount-text {
+        font-size: 1.1rem;
+    }
+
+    .content-section {
+        padding: 0 20px;
+    }
+
+    .discount-button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
