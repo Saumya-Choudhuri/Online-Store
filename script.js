@@ -3,6 +3,13 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
+// Reinitialize scroll after page load to ensure all content is measured
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        scroll.update();
+    }, 500);
+});
+
 // Logo and Nav scroll animation
 scroll.on('scroll', (args) => {
     const logo = document.getElementById('logo');
