@@ -672,16 +672,15 @@ body{
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 #page3{
-    min-height: 120vh;
+    min-height: 100vh;
     width: 100%;
     overflow: hidden;
     position: relative;
     background-color: #F7F7F7;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0;
     padding: 0;
     margin: 0;
 }
@@ -696,10 +695,11 @@ body{
     margin: 0;
     background: #F7F7F7;
     order: -1;
+    display: none;
 }
 
 .child{
-    height: 80vh;
+    height: 100%;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -710,11 +710,21 @@ body{
 
 }
 .child1 video{
-    height: 80vh;
+    height: 100%;
+    width: 100%;
     position: relative;
     overflow: hidden;
     display: block;
+    object-fit: cover;
 }
+
+.child video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 #page4{
     min-height: 100vh;
 }
