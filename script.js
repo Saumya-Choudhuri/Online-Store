@@ -54,16 +54,16 @@ scroll.on('scroll', (args) => {
 
 // Product Data
 const products = [
-    { id: 1, name: "Classic White Tee", price: 49, originalPrice: 65, category: "women", badge: "Sale", image: "" },
-    { id: 2, name: "Denim Jacket", price: 129, category: "women", badge: "New", image: "" },
-    { id: 3, name: "Leather Handbag", price: 189, originalPrice: 250, category: "accessories", badge: "Sale", image: "" },
-    { id: 4, name: "Slim Fit Chinos", price: 79, category: "men", image: "" },
-    { id: 5, name: "Silk Scarf", price: 45, category: "accessories", badge: "New", image: "" },
-    { id: 6, name: "Wool Blazer", price: 199, category: "men", image: "" },
-    { id: 7, name: "Summer Dress", price: 89, originalPrice: 120, category: "women", badge: "Sale", image: "" },
-    { id: 8, name: "Leather Belt", price: 55, category: "accessories", image: "" },
-    { id: 9, name: "Cotton Shirt", price: 65, category: "men", badge: "New", image: "" },
-    { id: 10, name: "Knit Sweater", price: 95, category: "women", image: "" },
+    { id: 1, name: "Classic White Tee", price: 49, originalPrice: 65, category: "women", badge: "Sale", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" },
+    { id: 2, name: "Denim Jacket", price: 129, category: "women", badge: "New", image: "https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=400&h=400&fit=crop" },
+    { id: 3, name: "Leather Handbag", price: 189, originalPrice: 250, category: "accessories", badge: "Sale", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop" },
+    { id: 4, name: "Slim Fit Chinos", price: 79, category: "men", image: "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=400&fit=crop" },
+    { id: 5, name: "Silk Scarf", price: 45, category: "accessories", badge: "New", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=400&fit=crop" },
+    { id: 6, name: "Wool Blazer", price: 199, category: "men", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" },
+    { id: 7, name: "Summer Dress", price: 89, originalPrice: 120, category: "women", badge: "Sale", image: "https://images.unsplash.com/photo-1595777712802-91d02d1d07c9?w=400&h=400&fit=crop" },
+    { id: 8, name: "Leather Belt", price: 55, category: "accessories", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop" },
+    { id: 9, name: "Cotton Shirt", price: 65, category: "men", badge: "New", image: "https://images.unsplash.com/photo-1596362051930-c3a146b3b299?w=400&h=400&fit=crop" },
+    { id: 10, name: "Knit Sweater", price: 95, category: "women", image: "https://images.unsplash.com/photo-1578932750294-708f62ac54c6?w=400&h=400&fit=crop" },
 ];
 
 // Cart State
@@ -108,7 +108,8 @@ function renderProducts(filter) {
         <div class="product-card" data-category="${product.category}">
             <div class="product-image">
                 ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
-                <i class="fas fa-tshirt placeholder-icon"></i>
+                <img src="${product.image}" alt="${product.name}" class="product-img" onerror="this.style.display='none'">
+                <i class="fas fa-tshirt placeholder-icon" style="display: ${product.image ? 'none' : 'block'}"></i>
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
@@ -295,10 +296,13 @@ loadinganimation();
 
 // Page 2 horizontal glide detection
 let lastX = 0;
+let lastXPage3 = 0;
 let isScrolling = false;
 let scrollTimeout;
 const page2 = document.getElementById('page2');
 const elems = document.querySelectorAll('#page2 .elem');
+const page3 = document.getElementById('page3');
+const page3Items = document.querySelectorAll('#page3 .child');
 
 // Detect scrolling
 scroll.on('scroll', () => {
@@ -306,6 +310,10 @@ scroll.on('scroll', () => {
     if (page2) {
         page2.classList.remove('gliding');
         elems.forEach(el => el.classList.remove('active'));
+    }
+    if (page3) {
+        page3.classList.remove('gliding');
+        page3Items.forEach(item => item.classList.remove('active'));
     }
     
     clearTimeout(scrollTimeout);
@@ -343,6 +351,56 @@ if (page2) {
     page2.addEventListener('mouseleave', () => {
         page2.classList.remove('gliding');
         elems.forEach(el => el.classList.remove('active'));
+    });
+}
+
+if (page3) {
+    // Pause all videos initially
+    page3Items.forEach(item => {
+        const video = item.querySelector('video');
+        if (video) {
+            video.pause();
+        }
+    });
+
+    page3.addEventListener('mouseenter', () => {
+        if (isScrolling) return;
+        page3.classList.add('gliding');
+    });
+
+    page3.addEventListener('mousemove', (e) => {
+        if (isScrolling) return;
+        
+        const child = e.target.closest('.child');
+        if (child) {
+            page3Items.forEach(el => {
+                el.classList.remove('active');
+                // Pause video for non-active items
+                const video = el.querySelector('video');
+                if (video) {
+                    video.pause();
+                }
+            });
+            child.classList.add('active');
+            // Play video for active item
+            const activeVideo = child.querySelector('video');
+            if (activeVideo) {
+                activeVideo.play();
+            }
+            page3.classList.add('gliding');
+        }
+    });
+
+    page3.addEventListener('mouseleave', () => {
+        page3.classList.remove('gliding');
+        page3Items.forEach(el => {
+            el.classList.remove('active');
+            // Pause all videos when leaving
+            const video = el.querySelector('video');
+            if (video) {
+                video.pause();
+            }
+        });
     });
 }
 //new change 

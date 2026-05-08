@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FH - Fashion House</title>
+    <title>FH - Fitness Hunk</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=14" />
 </head>
 <body>
     <div id="nav">
@@ -33,14 +33,14 @@
 
     <!-- About Panel -->
     <div id="about-panel" class="side-panel">
-        <button class="close-btn" onclick="toggleAbout()"><i class="fas fa-times"></i></button>
+        <button class="close-btn" onclick="closePanels()"><i class="fas fa-times"></i></button>
         <div class="panel-content">
             <h2>Our Story</h2>
             <p class="tagline">Redefining Fashion Since 2018</p>
             
             <div class="about-section">
                 <h3>Who We Are</h3>
-                <p>Fashion House (FH) is a premium fashion destination that blends contemporary style with timeless elegance. We believe that fashion is more than clothing—it's a form of self-expression that empowers individuals to showcase their unique identity.</p>
+                <p>Fitness Hunk (FH) is a premium fitness destination that blends contemporary style with timeless elegance. We believe that fitness is more than clothing—it's a form of self-expression that empowers individuals to showcase their unique identity.</p>
             </div>
             
             <div class="about-section">
@@ -66,7 +66,7 @@
             <div class="about-section">
                 <h3>Contact Us</h3>
                 <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> support@fashionhouse.com</p>
+                    <p><i class="fas fa-envelope"></i> support@fitnesshunk.com</p>
                     <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Ave, New York, NY 10001</p>
                 </div>
@@ -83,7 +83,7 @@
 
     <!-- Shopping Panel -->
     <div id="shopping-panel" class="side-panel">
-        <button class="close-btn" onclick="toggleShopping()"><i class="fas fa-times"></i></button>
+        <button class="close-btn" onclick="closePanels()"><i class="fas fa-times"></i></button>
         <div class="panel-content">
             <h2>Shop Collection</h2>
             
@@ -102,7 +102,7 @@
 
     <!-- Cart Panel -->
     <div id="cart-panel" class="side-panel">
-        <button class="close-btn" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        <button class="close-btn" onclick="closePanels()"><i class="fas fa-times"></i></button>
         <div class="panel-content">
             <h2>Your Cart</h2>
             
@@ -167,6 +167,7 @@
                 <div data-scroll data-scroll-speed="-1" class="dets">For Him</div>
             </div>
         </div>
+        <h2 class="page3-title">Bestseller</h2>
         <div id="page3" class="list3" >
             <!--".child#child$*4" is used to write the div child section 4 times-->
             <div class="child" id="child1">
@@ -182,19 +183,67 @@
                 <video autoplay loop muted src="./page3img4.mp4"></video>
             </div>
         </div>
-        <div id="page4" class="list4">
-            <div class="child3child1"></div>
-            <div class="child3child2"></div>
-            <div class="child3child3"></div>
-            <div class="child3child4"></div>
-            <div class="child3child5"></div>
-            <div class="child3child6"></div>
-            <div class="child3child7"></div>
-            <div class="child3child8"></div>
-            <div class="child3child9"></div>
-            <div class="child3child10"></div>
-            <div class="child3child11"></div>
-    
+        <div id="page4" class="courses-section">
+            <h2 class="courses-title">Our Fitness Courses</h2>
+            <p class="courses-subtitle">Transform Your Body & Mind with Expert-Led Training Programs</p>
+            
+            <div class="courses-grid">
+                <!-- Course Card 1 -->
+                <div class="course-card">
+                    <div class="course-icon">💪</div>
+                    <h3 class="course-name">Strength Building</h3>
+                    <p class="course-description">Build muscle and increase strength with our comprehensive resistance training program.</p>
+                    <div class="course-details">
+                        <span class="course-duration">12 Weeks</span>
+                        <span class="course-level">Beginner to Advanced</span>
+                    </div>
+                    <p class="course-instructor">By: Coach Marcus</p>
+                    <div class="course-price">$99</div>
+                    <button class="course-btn">Enroll Now</button>
+                </div>
+                
+                <!-- Course Card 2 -->
+                <div class="course-card">
+                    <div class="course-icon">🏃</div>
+                    <h3 class="course-name">Cardio Blast</h3>
+                    <p class="course-description">High-intensity cardio workouts designed to boost endurance and burn maximum calories.</p>
+                    <div class="course-details">
+                        <span class="course-duration">8 Weeks</span>
+                        <span class="course-level">All Levels</span>
+                    </div>
+                    <p class="course-instructor">By: Coach Sarah</p>
+                    <div class="course-price">$79</div>
+                    <button class="course-btn">Enroll Now</button>
+                </div>
+                
+                <!-- Course Card 3 -->
+                <div class="course-card">
+                    <div class="course-icon">🧘</div>
+                    <h3 class="course-name">Yoga & Flexibility</h3>
+                    <p class="course-description">Improve flexibility, balance, and mental peace through guided yoga sessions.</p>
+                    <div class="course-details">
+                        <span class="course-duration">6 Weeks</span>
+                        <span class="course-level">All Levels</span>
+                    </div>
+                    <p class="course-instructor">By: Coach Aisha</p>
+                    <div class="course-price">$59</div>
+                    <button class="course-btn">Enroll Now</button>
+                </div>
+                
+                <!-- Course Card 4 -->
+                <div class="course-card">
+                    <div class="course-icon">⚡</div>
+                    <h3 class="course-name">HIIT Training</h3>
+                    <p class="course-description">High-intensity interval training for maximum results in minimum time.</p>
+                    <div class="course-details">
+                        <span class="course-duration">10 Weeks</span>
+                        <span class="course-level">Intermediate to Advanced</span>
+                    </div>
+                    <p class="course-instructor">By: Coach James</p>
+                    <div class="course-price">$89</div>
+                    <button class="course-btn">Enroll Now</button>
+                </div>
+            </div>
         </div>
 
         <!-- Page 5: About Section -->
@@ -202,8 +251,8 @@
             <!-- Hero Section -->
             <div class="about-hero">
                 <div class="hero-content">
-                    <h1>About Fashion House</h1>
-                    <p>Redefining Fashion Since 2018</p>
+                    <h1>About Fitness Hunk</h1>
+                    <p>Redefining Fitness Since 2018</p>
                 </div>
             </div>
 
@@ -211,7 +260,7 @@
             <div class="content-section">
                 <h2 class="section-title">Who We Are</h2>
                 <div class="section-content">
-                    <p>Fashion House (FH) is a premium fashion destination that blends contemporary style with timeless elegance. We believe that fashion is more than clothing—it's a form of self-expression that empowers individuals to showcase their unique identity. Founded in 2018, we've grown from a small boutique to a global fashion brand trusted by thousands of customers worldwide.</p>
+                    <p>Fitness Hunk (FH) is a premium fitness destination that blends contemporary style with timeless elegance. We believe that fitness is more than clothing—it's a form of self-expression that empowers individuals to showcase their unique identity. Founded in 2018, we've grown from a small boutique to a global fitness brand trusted by thousands of customers worldwide.</p>
                     <p>Our collections are carefully curated to offer the perfect balance of quality, style, and affordability. Every piece in our store is selected with meticulous attention to detail, ensuring that our customers receive nothing but the best.</p>
                 </div>
             </div>
@@ -264,7 +313,7 @@
             <div class="content-section">
                 <h2 class="section-title">Our Story</h2>
                 <div class="section-content">
-                    <p>Fashion House was founded by a group of passionate fashion enthusiasts who shared a common vision: to create a platform where style meets sustainability. What started as a small pop-up store in New York has evolved into an international brand with a loyal customer base across 15+ countries.</p>
+                    <p>Fitness Hunk was founded by a group of passionate fitness enthusiasts who shared a common vision: to create a platform where style meets sustainability. What started as a small pop-up store in New York has evolved into an international brand with a loyal customer base across 15+ countries.</p>
                     <p style="margin-top: 15px;">Over the years, we've collaborated with renowned designers, sustainable brands, and influencers to bring you collections that matter. We listen to our customers, adapt to their needs, and continuously evolve our offerings to stay relevant in the fast-paced world of fashion.</p>
                 </div>
             </div>
@@ -292,7 +341,7 @@
                         </div>
                         <div class="contact-text">
                             <p>Email</p>
-                            <p><a href="mailto:support@fashionhouse.com" style="color: #000; text-decoration: none;">support@fashionhouse.com</a></p>
+                            <p><a href="mailto:support@fitnesshunk.com" style="color: #000; text-decoration: none;">support@fitnesshunk.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -327,7 +376,7 @@
             </div>
 
             <footer style="background: #000; color: white; padding: 40px; text-align: center; margin-top: 80px;">
-                <p>&copy; 2024 Fashion House. All rights reserved.</p>
+                <p>&copy; 2024 Fitness Hunk. All rights reserved.</p>
                 <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Designed & Built with <i class="fas fa-heart" style="color: #f44336;"></i></p>
             </footer>
         </div>
