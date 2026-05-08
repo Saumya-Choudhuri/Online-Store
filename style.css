@@ -672,14 +672,15 @@ body{
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 #page3{
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
     position: relative;
     background-color: #F7F7F7;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
     gap: 0;
     padding: 0;
     margin: 0;
