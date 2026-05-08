@@ -7,6 +7,18 @@ const scroll = new LocomotiveScroll({
 window.addEventListener('load', () => {
     setTimeout(() => {
         scroll.update();
+        
+        // Handle anchor navigation for smooth scrolling
+        const hash = window.location.hash;
+        if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+                scroll.scrollTo(element, {
+                    duration: 1000,
+                    offset: -100
+                });
+            }
+        }
     }, 500);
 });
 
