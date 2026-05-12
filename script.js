@@ -364,8 +364,18 @@ if (page3) {
     });
 
     page3.addEventListener('mouseenter', () => {
-        if (isScrolling) return;
         page3.classList.add('gliding');
+        
+        // Automatically play the first video on entering page3 (even if scrolling)
+        if (page3Items.length > 0) {
+            const firstChild = page3Items[0];
+            page3Items.forEach(el => el.classList.remove('active'));
+            firstChild.classList.add('active');
+            const firstVideo = firstChild.querySelector('video');
+            if (firstVideo) {
+                firstVideo.play();
+            }
+        }
     });
 
     page3.addEventListener('mousemove', (e) => {
