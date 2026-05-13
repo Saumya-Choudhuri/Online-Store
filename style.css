@@ -575,10 +575,12 @@ body{
     object-fit: cover;
 }
 #video-container #play{
-    padding: 3vw 2.3vw;
+    width: 3vw;
+    height: 3vw;
+    aspect-ratio: 1 / 1;
     background-color: black;
     color: #fff;
-    font-size: 1.3vw;
+    font-size: 0.75vw;
     position: absolute;
     text-transform: uppercase;
     font-family: futura;    
@@ -587,7 +589,24 @@ body{
     scale: 1;
     top: 50px;
     left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    pointer-events: auto !important;
+}
 
+#video-container #play:hover {
+    transform: scale(1.1);
 }
 
 #page2{
