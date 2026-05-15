@@ -108,8 +108,8 @@ function renderProducts(filter) {
         <div class="product-card" data-category="${product.category}">
             <div class="product-image">
                 ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
-                <img src="${product.image}" alt="${product.name}" class="product-img" onerror="this.style.display='none'">
-                <i class="fas fa-tshirt placeholder-icon" style="display: ${product.image ? 'none' : 'block'}"></i>
+                <img src="${product.image}" alt="${product.name}" class="product-img" onload="this.style.display='block'; this.nextElementSibling.style.display='none'" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                <i class="fas fa-tshirt placeholder-icon" style="display: block"></i>
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
