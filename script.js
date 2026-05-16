@@ -60,10 +60,10 @@ const products = [
     { id: 4, name: "Slim Fit Chinos", price: 79, category: "men", image: "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=400&fit=crop" },
     { id: 5, name: "Silk Scarf", price: 45, category: "accessories", badge: "New", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=400&fit=crop" },
     { id: 6, name: "Wool Blazer", price: 199, category: "men", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" },
-    { id: 7, name: "Summer Dress", price: 89, originalPrice: 120, category: "women", badge: "Sale", image: "https://images.unsplash.com/photo-1595777712802-91d02d1d07c9?w=400&h=400&fit=crop" },
+    { id: 7, name: "Summer Dress", price: 89, originalPrice: 120, category: "women", badge: "Sale", image: "./her2.png" },
     { id: 8, name: "Leather Belt", price: 55, category: "accessories", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop" },
-    { id: 9, name: "Cotton Shirt", price: 65, category: "men", badge: "New", image: "https://images.unsplash.com/photo-1596362051930-c3a146b3b299?w=400&h=400&fit=crop" },
-    { id: 10, name: "Knit Sweater", price: 95, category: "women", image: "https://images.unsplash.com/photo-1578932750294-708f62ac54c6?w=400&h=400&fit=crop" },
+    { id: 9, name: "Cotton Shirt", price: 65, category: "men", badge: "New", image: "./him.jpg" },
+    { id: 10, name: "Knit Sweater", price: 95, category: "women", image: "./her.jpg" },
 ];
 
 // Cart State
