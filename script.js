@@ -54,14 +54,14 @@ scroll.on('scroll', (args) => {
 
 // Product Data
 const products = [
-    { id: 1, name: "Classic White Tee", price: 49, originalPrice: 65, category: "women", badge: "Sale", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" },
-    { id: 2, name: "Denim Jacket", price: 129, category: "women", badge: "New", image: "https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=400&h=400&fit=crop" },
-    { id: 3, name: "Leather Handbag", price: 189, originalPrice: 250, category: "accessories", badge: "Sale", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop" },
-    { id: 4, name: "Slim Fit Chinos", price: 79, category: "men", image: "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=400&fit=crop" },
-    { id: 5, name: "Silk Scarf", price: 45, category: "accessories", badge: "New", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=400&fit=crop" },
-    { id: 6, name: "Wool Blazer", price: 199, category: "men", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" },
+    { id: 1, name: "Classic White Tee", price: 49, originalPrice: 65, category: "women", badge: "Sale", image: "./her2.png" },
+    { id: 2, name: "Denim Jacket", price: 129, category: "women", badge: "New", image: "./her.jpg" },
+    { id: 3, name: "Leather Handbag", price: 189, originalPrice: 250, category: "accessories", badge: "Sale", image: "./acc.jpg" },
+    { id: 4, name: "Slim Fit Chinos", price: 79, category: "men", image: "./him.jpg" },
+    { id: 5, name: "Silk Scarf", price: 45, category: "accessories", badge: "New", image: "./gloves.jpg" },
+    { id: 6, name: "Wool Blazer", price: 199, category: "men", image: "./him.jpg" },
     { id: 7, name: "Summer Dress", price: 89, originalPrice: 120, category: "women", badge: "Sale", image: "./her2.png" },
-    { id: 8, name: "Leather Belt", price: 55, category: "accessories", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop" },
+    { id: 8, name: "Leather Belt", price: 55, category: "accessories", image: "./gloves.jpg" },
     { id: 9, name: "Cotton Shirt", price: 65, category: "men", badge: "New", image: "./him.jpg" },
     { id: 10, name: "Knit Sweater", price: 95, category: "women", image: "./her.jpg" },
 ];
